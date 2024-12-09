@@ -11,7 +11,7 @@ SESSION_NAME="nexus-prover"
 PROGRAM_DIR="$NEXUS_HOME/src/generated"
 ARCH=$(uname -m)
 OS=$(uname -s)
-REPO_BASE="https://github.com/nexus-xyz/network-api/raw/refs/tags/0.4.0/clients/cli"
+REPO_BASE="https://github.com/nexus-xyz/network-api/raw/refs/tags/0.4.1/clients/cli"
 
 setup_directories() {
     mkdir -p "$PROGRAM_DIR"
@@ -63,10 +63,10 @@ download_prover() {
     if [ ! -f "$prover_path" ]; then
         if [ "$ARCH" = "x86_64" ]; then
             echo -e "${YELLOW}下载 AMD64 架构 Prover...${NC}"
-            curl -L "https://github.com/qzz0518/nexus-run/releases/download/v0.4.0/prover-amd64" -o "$prover_path"
+            curl -L "https://github.com/qzz0518/nexus-run/releases/download/v0.4.1/prover-amd64" -o "$prover_path"
         elif [ "$ARCH" = "arm64" ]; then
             echo -e "${YELLOW}下载 ARM64 架构 Prover...${NC}"
-            curl -L "https://github.com/qzz0518/nexus-run/releases/download/v0.4.0/prover-arm64" -o "$prover_path"
+            curl -L "https://github.com/qzz0518/nexus-run/releases/download/v0.4.1/prover-arm64" -o "$prover_path"
         else
             echo -e "${RED}不支持的系统架构: $ARCH${NC}"
             exit 1
@@ -128,7 +128,6 @@ start_prover() {
             echo -e "${GREEN}已保存 Prover ID: $input_id${NC}"
         else
             echo -e "${YELLOW}将自动生成新的 Prover ID...${NC}"
-            generate_prover_id
         fi
     fi
     
