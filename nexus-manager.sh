@@ -41,15 +41,13 @@ check_dependencies() {
 }
 
 download_program_files() {
-    declare -A files
-    files["cancer-diagnostic"]="$REPO_BASE/src/generated/cancer-diagnostic"
-    files["fast-fib"]="$REPO_BASE/src/generated/fast-fib"
+    local files="cancer-diagnostic fast-fib"
     
-    for file in "${!files[@]}"; do
+    for file in $files; do
         local target_path="$PROGRAM_DIR/$file"
         if [ ! -f "$target_path" ]; then
             echo -e "${YELLOW}下载 $file...${NC}"
-            curl -L "${files[$file]}" -o "$target_path"
+            curl -L "$REPO_BASE/src/generated/$file" -o "$target_path"
             if [ $? -eq 0 ]; then
                 echo -e "${GREEN}$file 下载完成${NC}"
                 chmod +x "$target_path"
@@ -179,7 +177,6 @@ stop_prover() {
 
 cleanup() {
     echo -e "\n${YELLOW}正在清理...${NC}"
-    stop_prover
     exit 0
 }
 
@@ -187,6 +184,11 @@ trap cleanup SIGINT SIGTERM
 
 while true; do
     echo -e "\n${YELLOW}=== Nexus Prover 管理工具 ===${NC}"
+    echo -e "${GREEN}作者: Zerah${NC}"
+    echo -e "${GREEN}Twitter: ${NC}https://x.com/zerah_eth"
+    echo -e "${GREEN}Github: ${NC}https://github.com/qzz0518/nexus-run"
+    echo -e "${GREEN}推荐工具: ${NC}SOL 回收神器 - https://solback.app/\n"
+    
     echo "1. 安装并启动 Nexus"
     echo "2. 查看当前运行状态"
     echo "3. 查看 Prover ID"
@@ -215,6 +217,9 @@ while true; do
             stop_prover
             ;;
         6)
+            echo -e "\n${GREEN}感谢使用！${NC}"
+            echo -e "${YELLOW}更多工具请关注 Twitter: ${NC}https://x.com/zerah_eth"
+            echo -e "${YELLOW}SOL 代币回收工具: ${NC}https://solback.app/\n"
             cleanup
             ;;
         *)
