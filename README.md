@@ -37,6 +37,7 @@ curl -O https://raw.githubusercontent.com/qzz0518/nexus-run/refs/heads/main/nexu
 - 首次运行时会提示输入 Prover ID，如果没有可以直接回车自动生成 (建议使用网页上的 ID)
 - 查看运行状态时请使用关闭终端或者 Ctrl+B 再按 D 的方式退出，不要使用 Ctrl+C
 - 程序会自动在后台运行，无需保持终端开启
+- 服务器内存至少要有 2G RAM，不然会闪退
 
 ## 关于作者
 
