@@ -39,6 +39,15 @@ curl -O https://raw.githubusercontent.com/qzz0518/nexus-run/refs/heads/main/nexu
 - 程序会自动在后台运行，无需保持终端开启
 - 服务器内存至少要有 2G RAM，不然会闪退
 
+## 关于 Prover ID 的说明
+如果你想在网页上的看到自己的 POINTS ,点击左下角 My Profile 如下图显示的话，你需要使用网页接口的形式获取并使用你的 localId 才能够显示。
+<img width="1326" alt="image" src="https://github.com/user-attachments/assets/a2107b55-7f8a-4bc6-bbaa-eb17f0ea927c">
+
+网页浏览器进入 https://beta.nexus.xyz/ ，点击F12，按照下图画红圈的地方进行点击，找最后找到 localId，并复制绿色的部分，使用并设置 Prover ID
+<img width="1137" alt="image" src="https://github.com/user-attachments/assets/e7d038dd-a940-4681-bd8d-aacd1816b2f3">
+
+当前使用随机生成id的形式运行并不代表你跑的积分无效，项目方后续应该会出绑定的步骤。
+
 ## 关于作者
 
 - Twitter: [@zerah_eth](https://x.com/zerah_eth)
