@@ -67,6 +67,9 @@ download_prover() {
         elif [ "$ARCH" = "arm64" ]; then
             echo -e "${YELLOW}下载 ARM64 架构 Prover...${NC}"
             curl -L "https://github.com/qzz0518/nexus-run/releases/download/v0.4.2/prover-arm64" -o "$prover_path"
+        elif [ "$ARCH" = "aarch64" ]; then
+            echo -e "${YELLOW}下载 ARM64 架构 Prover...${NC}"
+            curl -L "https://github.com/qzz0518/nexus-run/releases/download/v0.4.2/prover-arm64" -o "$prover_path"    
         else
             echo -e "${RED}不支持的系统架构: $ARCH${NC}"
             exit 1
