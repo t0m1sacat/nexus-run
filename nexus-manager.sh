@@ -11,7 +11,7 @@ SESSION_NAME="nexus-prover"
 PROGRAM_DIR="$NEXUS_HOME/src/generated"
 ARCH=$(uname -m)
 OS=$(uname -s)
-REPO_BASE="https://github.com/nexus-xyz/network-api/raw/refs/tags/0.4.1/clients/cli"
+REPO_BASE="https://github.com/nexus-xyz/network-api/raw/refs/tags/0.4.2/clients/cli"
 
 setup_directories() {
     mkdir -p "$PROGRAM_DIR"
@@ -63,10 +63,10 @@ download_prover() {
     if [ ! -f "$prover_path" ]; then
         if [ "$ARCH" = "x86_64" ]; then
             echo -e "${YELLOW}下载 AMD64 架构 Prover...${NC}"
-            curl -L "https://github.com/qzz0518/nexus-run/releases/download/v0.4.1/prover-amd64" -o "$prover_path"
+            curl -L "https://github.com/qzz0518/nexus-run/releases/download/v0.4.2/prover-amd64" -o "$prover_path"
         elif [ "$ARCH" = "arm64" ]; then
             echo -e "${YELLOW}下载 ARM64 架构 Prover...${NC}"
-            curl -L "https://github.com/qzz0518/nexus-run/releases/download/v0.4.1/prover-arm64" -o "$prover_path"
+            curl -L "https://github.com/qzz0518/nexus-run/releases/download/v0.4.2/prover-arm64" -o "$prover_path"
         else
             echo -e "${RED}不支持的系统架构: $ARCH${NC}"
             exit 1
@@ -183,7 +183,6 @@ trap cleanup SIGINT SIGTERM
 
 while true; do
     echo -e "\n${YELLOW}=== Nexus Prover 管理工具 ===${NC}"
-    echo -e "${GREEN}作者: Zerah${NC}"
     echo -e "${GREEN}Twitter: ${NC}https://x.com/zerah_eth"
     echo -e "${GREEN}Github: ${NC}https://github.com/qzz0518/nexus-run"
     echo -e "${GREEN}推荐工具: ${NC}SOL 回收神器 - https://solback.app/\n"
