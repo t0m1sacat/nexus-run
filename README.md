@@ -58,6 +58,27 @@ console.log(localStorage.getItem('flutter.proverId'));
 
 当前使用CLI随机生成id的形式运行并不代表你跑的积分无效，请保存和备份好你随机生成的id，项目方后续应该会出绑定的步骤。
 
+
+## 我已经运行过了，我想使用网页上的 ID 重新跑需要怎么做？
+
+如果你已经运行过 Nexus Prover，但想使用网页上的 ID 重新运行，请按照以下步骤操作：
+
+1.	打开浏览器，进入 - [Nexus Beta](https://beta.nexus.xyz/) 页面。
+2.	按下 F12 打开开发者工具，切换到控制台 (Console)。
+3.	在控制台中输入以下命令：console.log(localStorage.getItem('flutter.proverId'));
+4.	复制输出的 ID（绿色部分，不要包含双引号）。注意: 如果之前使用的是随机生成的 ID，请备份该 ID，以防丢失后无法查看之前的积分。
+5.	回到终端，运行脚本并按照以下步骤操作：
+
+```bash
+./nexus-manager.sh
+```
+
+	•	按下 5 停止当前进程。
+	•	按下 4 设置新的 Prover ID，并粘贴从网页复制的一长串 ID。
+	•	按下 1 启动 Nexus。
+
+完成上述步骤后，Prover 会使用新的 ID 运行，等几分钟后你可以在网页中查看积分和其他信息。
+
 ## 关于作者
 
 - Twitter: [@zerah_eth](https://x.com/zerah_eth)
