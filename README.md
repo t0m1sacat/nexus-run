@@ -52,3 +52,4 @@ curl -O https://raw.githubusercontent.com/qzz0518/nexus-run/refs/heads/main/nexu
 
 - [Nexus Network](https://nexus.xyz/)
 - [Nexus Beta](https://beta.nexus.xyz/)
+- [Nexus Client](https://github.com/nexus-xyz/network-api)
