@@ -112,7 +112,7 @@ generate_prover_id() {
 
 start_prover() {
     if tmux has-session -t "$SESSION_NAME" 2>/dev/null; then
-        echo -e "${YELLOW}Prover 已在运行中${NC}"
+        echo -e "${YELLOW}Prover 已在运行中，请选择2查看运行日志${NC}"
         return
     fi
     
@@ -132,7 +132,7 @@ start_prover() {
     fi
     
     tmux new-session -d -s "$SESSION_NAME" "cd '$NEXUS_HOME' && ./prover beta.orchestrator.nexus.xyz"
-    echo -e "${GREEN}Prover 已启动${NC}"
+    echo -e "${GREEN}Prover 已启动，选择2可查看运行日志${NC}"
 }
 
 check_status() {
